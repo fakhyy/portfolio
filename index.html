@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fakhar Sultan — Software Developer</title>
 
-    <title>Fakhar Sultan | Software Engineer · Rust & Full Stack Developer</title>
 
     <meta
         name="description"
@@ -55,16 +55,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet"
-    />
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,380;9..144,480;9..144,560&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
@@ -87,1110 +83,273 @@
     }
     </script>
 
-    <style>
-        /* ========================================
-           CSS Variables
-           ======================================== */
-        :root {
-            --bg: #141414;
-            --surface: #1b1b1b;
-            --surface-hover: #202020;
-            --line: #2b2b2b;
-            --text: #f2f1ee;
-            --muted: #949492;
-            --faint: #656462;
-            --accent: #e2e2de;
-            --accent-dim: #f2f1ee1a;
-            --radius: 10px;
-            --radius-lg: 16px;
-            --serif: "Fraunces", serif;
-            --sans: "Inter", sans-serif;
-            --mono: "JetBrains Mono", monospace;
-            --max-w: 1080px;
-            --nav-h: 64px;
-        }
+<style>
+  :root{
+    --bg: #17161b;
+    --bg-soft: #1c1b22;
+    --rule: #2b2932;
+    --text: #e8e5e1;
+    --text-muted: #948f9c;
+    --accent: #93a9c7;
+    --accent-dim: rgba(147,169,199,0.14);
+  }
 
-        /* ========================================
-           Reset & Base
-           ======================================== */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: var(--sans);
-            -webkit-font-smoothing: antialiased;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        a { color: inherit; text-decoration: none; }
-        img { display: block; max-width: 100%; }
-        ul { list-style: none; }
+  *{ box-sizing: border-box; }
 
-        /* ========================================
-           Utility
-           ======================================== */
-        .container {
-            max-width: var(--max-w);
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+  html{ background: var(--bg); }
 
-        /* ========================================
-           Fade-in Animation
-           ======================================== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    min-height: 100vh;
+  }
 
-        /* ========================================
-           Navigation
-           ======================================== */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            height: var(--nav-h);
-            background: rgba(20, 20, 20, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--line);
-            transition: background 0.2s;
-        }
-        .nav-inner {
-            max-width: var(--max-w);
-            margin: 0 auto;
-            padding: 0 24px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .nav-logo {
-            font-family: var(--serif);
-            font-weight: 600;
-            font-size: 17px;
-            color: var(--text);
-            letter-spacing: -0.01em;
-        }
-        .nav-links {
-            display: flex;
-            gap: 4px;
-        }
-        .nav-link {
-            font-size: 13.5px;
-            font-weight: 500;
-            color: var(--muted);
-            padding: 6px 14px;
-            border-radius: 999px;
-            transition: color 0.15s, background 0.15s;
-            position: relative;
-        }
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--text);
-        }
-        .nav-link.active {
-            background: var(--surface);
-        }
-        .nav-hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-        }
-        .nav-hamburger span {
-            width: 20px;
-            height: 2px;
-            background: var(--text);
-            border-radius: 2px;
-            transition: transform 0.2s, opacity 0.2s;
-        }
-        .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-        .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-        .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  /* soft grain, so the dark field doesn't read flat */
+  body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
 
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: var(--nav-h);
-            left: 0;
-            right: 0;
-            background: rgba(20, 20, 20, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--line);
-            padding: 16px 24px;
-            z-index: 99;
-        }
-        .mobile-menu.open { display: block; }
-        .mobile-menu a {
-            display: block;
-            padding: 12px 0;
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--muted);
-            border-bottom: 1px solid var(--line);
-            transition: color 0.15s;
-        }
-        .mobile-menu a:last-child { border-bottom: none; }
-        .mobile-menu a:hover,
-        .mobile-menu a.active { color: var(--text); }
+  .wrap{
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 5.5rem 1.5rem 4rem;
+  }
 
-        /* ========================================
-           Hero
-           ======================================== */
-        .hero {
-            padding: 160px 24px 80px;
-            max-width: var(--max-w);
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .hero-avatar {
-            width: 96px;
-            height: 96px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 1px solid var(--line);
-            margin-bottom: 28px;
-            background: var(--surface);
-        }
-        .hero-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .hero-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            font-size: 12.5px;
-            font-weight: 500;
-            color: var(--muted);
-            background: var(--surface);
-            border: 1px solid var(--line);
-            padding: 5px 14px;
-            border-radius: 999px;
-            margin-bottom: 24px;
-        }
-        .hero-status::before {
-            content: "";
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #7ec98f;
-            flex-shrink: 0;
-        }
-        .hero h1 {
-            font-family: var(--serif);
-            font-weight: 500;
-            font-size: clamp(36px, 6vw, 56px);
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            margin-bottom: 12px;
-        }
-        .hero-subtitle {
-            font-size: clamp(16px, 2.5vw, 20px);
-            color: var(--muted);
-            max-width: 600px;
-            line-height: 1.6;
-            margin-bottom: 12px;
-        }
-        .hero-desc {
-            font-size: 15.5px;
-            color: var(--faint);
-            max-width: 540px;
-            line-height: 1.7;
-            margin-bottom: 32px;
-        }
-        .hero-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-            margin-bottom: 36px;
-        }
-        .hero-chip {
-            font-family: var(--mono);
-            font-size: 12px;
-            color: var(--muted);
-            border: 1px solid var(--line);
-            background: var(--surface);
-            padding: 5px 12px;
-            border-radius: 8px;
-            transition: border-color 0.15s, color 0.15s;
-        }
-        .hero-chip:hover {
-            border-color: var(--faint);
-            color: var(--text);
-        }
-        .hero-cta {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .btn {
-            font-family: var(--sans);
-            font-size: 14px;
-            font-weight: 600;
-            padding: 11px 24px;
-            border-radius: 999px;
-            border: 1px solid transparent;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            transition: transform 0.12s, opacity 0.15s, background 0.15s;
-        }
-        .btn:active { transform: scale(0.97); }
-        .btn-primary {
-            background: var(--text);
-            color: var(--bg);
-        }
-        .btn-primary:hover { opacity: 0.88; }
-        .btn-secondary {
-            background: var(--surface);
-            color: var(--text);
-            border-color: var(--line);
-        }
-        .btn-secondary:hover { background: var(--surface-hover); }
+  .reveal{
+    animation: rise 0.7s cubic-bezier(.2,.7,.3,1) both;
+  }
+  @keyframes rise{
+    from{ opacity: 0; transform: translateY(10px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ animation: none; }
+  }
 
-        /* ========================================
-           Sections
-           ======================================== */
-        .section {
-            padding: 80px 0;
-        }
-        .section-label {
-            font-family: var(--mono);
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--faint);
-            margin-bottom: 12px;
-        }
-        .section-heading {
-            font-family: var(--serif);
-            font-weight: 500;
-            font-size: clamp(26px, 4vw, 36px);
-            line-height: 1.2;
-            letter-spacing: -0.01em;
-            margin-bottom: 16px;
-        }
-        .section-desc {
-            font-size: 16px;
-            color: var(--muted);
-            line-height: 1.7;
-            max-width: 620px;
-            margin-bottom: 48px;
-        }
+  header{ margin-bottom: 3rem; }
 
-        /* ========================================
-           About
-           ======================================== */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 56px;
-            align-items: start;
-        }
-        .about-text p {
-            font-size: 16px;
-            line-height: 1.75;
-            color: var(--muted);
-            margin-bottom: 16px;
-        }
-        .about-text p:last-child { margin-bottom: 0; }
-        .about-text strong { color: var(--text); font-weight: 600; }
-        .interest-list {
-            display: flex;
-            flex-direction: column;
-        }
-        .interest-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 0;
-            border-top: 1px solid var(--line);
-            font-size: 14.5px;
-        }
-        .interest-item:last-child { border-bottom: 1px solid var(--line); }
-        .interest-item strong {
-            color: var(--text);
-            font-weight: 500;
-        }
-        .interest-item span { color: var(--muted); }
+  h1{
+    font-family: 'Fraunces', serif;
+    font-optical-sizing: auto;
+    font-weight: 480;
+    font-size: 2.6rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.6rem;
+    color: var(--text);
+  }
 
-        /* ========================================
-           Projects
-           ======================================== */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-        .project-card {
-            border: 1px solid var(--line);
-            border-radius: var(--radius-lg);
-            background: var(--surface);
-            overflow: hidden;
-            transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-        }
-        .project-card:hover {
-            border-color: var(--faint);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px -12px rgba(0,0,0,0.5);
-        }
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background: var(--bg);
-            border-bottom: 1px solid var(--line);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--faint);
-            font-family: var(--mono);
-            font-size: 12px;
-        }
-        .project-body {
-            padding: 24px;
-        }
-        .project-meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        .project-year {
-            font-family: var(--mono);
-            font-size: 12px;
-            color: var(--faint);
-        }
-        .project-card h3 {
-            font-family: var(--serif);
-            font-weight: 500;
-            font-size: 21px;
-            margin-bottom: 8px;
-        }
-        .project-card p {
-            font-size: 14.5px;
-            color: var(--muted);
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 20px;
-        }
-        .project-tags span {
-            font-family: var(--mono);
-            font-size: 11px;
-            color: var(--muted);
-            border: 1px solid var(--line);
-            padding: 3px 9px;
-            border-radius: 6px;
-        }
-        .project-links {
-            display: flex;
-            gap: 10px;
-        }
-        .project-links a {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--muted);
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            padding: 6px 14px;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            transition: color 0.15s, border-color 0.15s, background 0.15s;
-        }
-        .project-links a:hover {
-            color: var(--text);
-            border-color: var(--faint);
-            background: var(--surface-hover);
-        }
+  .tagline{
+    color: var(--text-muted);
+    font-size: 1.02rem;
+    max-width: 34ch;
+    margin: 0;
+  }
 
-        /* ========================================
-           Skills
-           ======================================== */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-        .skill-group {
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            padding: 24px;
-            background: var(--surface);
-        }
-        .skill-group h3 {
-            font-family: var(--mono);
-            font-size: 12px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--faint);
-            margin-bottom: 16px;
-        }
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .skill-tag {
-            font-size: 13.5px;
-            color: var(--muted);
-            padding: 5px 12px;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            transition: color 0.15s, border-color 0.15s;
-        }
-        .skill-tag:hover {
-            color: var(--text);
-            border-color: var(--faint);
-        }
+  .bio{
+    color: var(--text);
+    font-size: 1rem;
+    max-width: 58ch;
+    margin: 1.6rem 0 0;
+  }
 
-        /* ========================================
-           Open Source
-           ======================================== */
-        .oss-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: start;
-        }
-        .oss-text p {
-            font-size: 16px;
-            color: var(--muted);
-            line-height: 1.75;
-            margin-bottom: 16px;
-        }
-        .oss-text strong { color: var(--text); font-weight: 600; }
-        .oss-projects {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .oss-item {
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            padding: 20px;
-            background: var(--surface);
-            transition: border-color 0.15s;
-        }
-        .oss-item:hover { border-color: var(--faint); }
-        .oss-item h4 {
-            font-family: var(--serif);
-            font-weight: 500;
-            font-size: 17px;
-            margin-bottom: 6px;
-        }
-        .oss-item p {
-            font-size: 14px;
-            color: var(--muted);
-            line-height: 1.55;
-            margin: 0;
-        }
+  section{ margin-top: 3.4rem; }
 
-        /* ========================================
-           Writing
-           ======================================== */
-        .writing-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-        .writing-card {
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            padding: 24px;
-            background: var(--surface);
-            transition: border-color 0.2s, transform 0.2s;
-        }
-        .writing-card:hover {
-            border-color: var(--faint);
-            transform: translateY(-2px);
-        }
-        .writing-card-tag {
-            font-family: var(--mono);
-            font-size: 11px;
-            color: var(--faint);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 10px;
-        }
-        .writing-card h3 {
-            font-family: var(--serif);
-            font-weight: 500;
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-        .writing-card p {
-            font-size: 14px;
-            color: var(--muted);
-            line-height: 1.6;
-            margin-bottom: 12px;
-        }
-        .writing-card-date {
-            font-family: var(--mono);
-            font-size: 12px;
-            color: var(--faint);
-        }
+  h2{
+    font-family: 'Fraunces', serif;
+    font-optical-sizing: auto;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin: 0 0 1.4rem;
+  }
 
-        /* ========================================
-           Contact
-           ======================================== */
-        .contact {
-            text-align: center;
-            padding: 100px 24px 80px;
-        }
-        .contact .section-heading {
-            margin-bottom: 16px;
-        }
-        .contact .section-desc {
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 40px;
-        }
-        .contact-links {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .contact-link {
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--muted);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 10px 20px;
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            transition: color 0.15s, border-color 0.15s, background 0.15s;
-        }
-        .contact-link:hover {
-            color: var(--text);
-            border-color: var(--faint);
-            background: var(--surface);
-        }
+  .project{
+    padding: 1.6rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .project:last-child{ padding-bottom: 0; }
 
-        /* ========================================
-           Footer
-           ======================================== */
-        .footer {
-            text-align: center;
-            padding: 40px 24px 48px;
-            font-family: var(--mono);
-            font-size: 13px;
-            color: var(--faint);
-            border-top: 1px solid var(--line);
-        }
+  .project h3{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: 0 0 0.5rem;
+    color: var(--text);
+  }
 
-        /* ========================================
-           Responsive — Tablet
-           ======================================== */
-        @media (max-width: 900px) {
-            .projects-grid { grid-template-columns: 1fr; }
-            .skills-grid { grid-template-columns: repeat(2, 1fr); }
-            .about-grid { grid-template-columns: 1fr; gap: 32px; }
-            .oss-content { grid-template-columns: 1fr; gap: 32px; }
-            .writing-grid { grid-template-columns: 1fr; }
-        }
+  .project p{
+    margin: 0 0 0.9rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    max-width: 56ch;
+  }
 
-        /* ========================================
-           Responsive — Mobile
-           ======================================== */
-        @media (max-width: 640px) {
-            .nav-links { display: none; }
-            .nav-hamburger { display: flex; }
+  .tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .tags span{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.01em;
+    color: var(--accent);
+    background: var(--accent-dim);
+    padding: 0.25rem 0.55rem;
+    border-radius: 3px;
+  }
 
-            .hero { padding: 120px 24px 60px; }
-            .hero h1 { font-size: 32px; }
+  .now{
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    max-width: 56ch;
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+  }
 
-            .section { padding: 56px 0; }
+  .stack{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.6rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+  .stack span:not(:last-child)::after{
+    content: "";
+  }
 
-            .skills-grid { grid-template-columns: 1fr; }
+  .contact-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-            .contact-links { flex-direction: column; align-items: center; }
-        }
+  a{
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  a:hover, a:focus-visible{
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  a:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
 
-        /* ========================================
-           Reduced Motion
-           ======================================== */
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            .reveal {
-                opacity: 1;
-                transform: none;
-                transition: none;
-            }
-            .project-card,
-            .writing-card { transition: none; }
-            .btn { transition: none; }
-        }
-    </style>
+  footer{
+    margin-top: 4.5rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--rule);
+    color: var(--text-muted);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 420px){
+    h1{ font-size: 2.1rem; }
+    .wrap{ padding: 3.5rem 1.25rem 3rem; }
+  }
+</style>
 </head>
 <body>
 
-    <!-- ============ Navigation ============ -->
-    <nav class="nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-inner">
-            <a href="#hero" class="nav-logo" aria-label="Fakhar Sultan — Home">FS</a>
-            <div class="nav-links">
-                <a href="#about" class="nav-link" data-section="about">About</a>
-                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
-                <a href="#open-source" class="nav-link" data-section="open-source">Open Source</a>
-                <a href="#writing" class="nav-link" data-section="writing">Writing</a>
-                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
-            </div>
-            <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
+<div class="wrap reveal">
 
-    <div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#open-source">Open Source</a>
-        <a href="#writing">Writing</a>
-        <a href="#contact">Contact</a>
+  <header>
+    <h1>Fakhar Sultan</h1>
+    <p class="tagline">Software developer and builder exploring the intersection of code, systems, and ideas.</p>
+    <p class="bio">I build software to understand things, solve problems, and turn ideas into something real. I'm especially interested in systems, mathematics, physics, and philosophy.</p>
+  </header>
+
+  <section>
+    <h2>Selected work</h2>
+
+    <div class="project">
+      <h3>Just Post</h3>
+      <p>A modern blog publishing platform and CMS focused on writing, rich-text editing, and a clean publishing experience.</p>
+      <div class="tags"><span>tanstack start</span><span>drizzle</span><span>postgresql</span><span>tiptap</span></div>
     </div>
 
-    <!-- ============ Hero ============ -->
-    <header class="hero" id="hero">
-        <div class="hero-avatar">
-            <img src="/profile.png" alt="Fakhar Sultan — Software Engineer" width="96" height="96" loading="eager" />
-        </div>
+    <div class="project">
+      <h3>RaLynk</h3>
+      <p>A link analytics SaaS for creating and tracking links, with a free and pro product model.</p>
+      <div class="tags"><span>next.js</span><span>typescript</span><span>postgresql</span><span>redis</span></div>
+    </div>
 
-        <div class="hero-status">Open to Work</div>
+    <div class="project">
+      <h3>retemp</h3>
+      <p>An npm library for building reusable email templates, created to make transactional email development simpler and more consistent.</p>
+      <div class="tags"><span>typescript</span><span>react email</span><span>npm</span></div>
+    </div>
 
-        <h1>Fakhar Sultan</h1>
+    <div class="project">
+      <h3>Foto</h3>
+      <p>An image-processing project exploring high-performance image operations with Rust and NAPI.</p>
+      <div class="tags"><span>rust</span><span>napi</span><span>image processing</span></div>
+    </div>
 
-        <p class="hero-subtitle">
-            Software Engineer building fast, scalable software, developer tools, and open-source projects.
-        </p>
+    <div class="project">
+      <h3>Fakhyy Labs</h3>
+      <p>A space for experiments, developer tools, and ideas that don't fit into a single product.</p>
+      <div class="tags"><span>experiments</span><span>tools</span><span>research</span></div>
+    </div>
+  </section>
 
-        <p class="hero-desc">
-            I specialize in Rust, TypeScript, React, Next.js, PostgreSQL, and Linux. I enjoy building high-performance applications, backend systems, developer tooling, and products with clean architecture and excellent user experience.
-        </p>
+  <section>
+    <h2>Right now</h2>
+    <p class="now">Building Fakhyy Labs, improving my engineering fundamentals, and exploring Rust, systems programming, AI, mathematics, and the deeper ideas connecting computation with the physical world.</p>
+  </section>
 
-        <div class="hero-chips" aria-label="Technologies">
-            <span class="hero-chip">Rust</span>
-            <span class="hero-chip">TypeScript</span>
-            <span class="hero-chip">React</span>
-            <span class="hero-chip">Next.js</span>
-            <span class="hero-chip">Node.js</span>
-            <span class="hero-chip">PostgreSQL</span>
-            <span class="hero-chip">Linux</span>
-            <span class="hero-chip">Docker</span>
-        </div>
+  <section>
+    <h2>Languages</h2>
+    <div class="stack">
+      <span>typescript</span><span>rust</span><span>python</span><span>c++</span><span>sql</span>
+    </div>
+  </section>
 
-        <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#contact" class="btn btn-secondary">Contact Me</a>
-            <a href="/resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Download Resume</a>
-        </div>
-    </header>
+  <section>
+    <h2>Stack</h2>
+    <div class="stack">
+      <span>react</span><span>next.js</span><span>tanstack start</span><span>sveltekit</span><span>node.js</span><span>bun</span><span>hono</span><span>postgresql</span><span>mongodb</span><span>redis</span><span>drizzle</span><span>tailwind css</span><span>shadcn ui</span><span>tiptap</span><span>docker</span>
+    </div>
+  </section>
 
-    <!-- ============ About ============ -->
-    <section class="section" id="about">
-        <div class="container reveal">
-            <div class="section-label">About</div>
-            <h2 class="section-heading">A bit about me</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        I'm a <strong>software engineer</strong> based in Lahore, Pakistan. I build high-performance applications, backend systems, and developer tools with a focus on clean architecture and reliability.
-                    </p>
-                    <p>
-                        My work spans <strong>frontend and backend development</strong> — from crafting responsive interfaces with React and Next.js to designing scalable APIs and services with Rust, Node.js, and PostgreSQL. I care deeply about performance, type safety, and developer experience.
-                    </p>
-                    <p>
-                        Outside of shipping code, I'm interested in <strong>open source</strong>, operating systems, computer science fundamentals, and the intersection of software engineering with <strong>mathematics, physics, and philosophy</strong>. I believe the best software is built with intention — nothing extra, every part doing exactly one job.
-                    </p>
-                </div>
-                <ul class="interest-list">
-                    <li class="interest-item"><strong>Focus</strong> <span>Full-stack, Systems, Developer Tools</span></li>
-                    <li class="interest-item"><strong>Languages</strong> <span>Rust, TypeScript, Python, C++</span></li>
-                    <li class="interest-item"><strong>Frameworks</strong> <span>React, Next.js, SvelteKit, Axum</span></li>
-                    <li class="interest-item"><strong>Interests</strong> <span>Math · Physics · Philosophy</span></li>
-                    <li class="interest-item"><strong>Tools</strong> <span>Zed, VS Code, Linux, Git</span></li>
-                    <li class="interest-item"><strong>Based in</strong> <span>Lahore, Pakistan</span></li>
-                </ul>
-            </div>
-        </div>
-    </section>
+  <section>
+    <h2>Get in touch</h2>
+    <ul class="contact-list">
+      <li><a href="mailto:hello@fakhyy.com">hello@fakhyy.com</a></li>
+      <li><a href="https://github.com/fakhy">github.com/fakhy</a></li>
+      <li><a href="https://fakhyy.com">fakhyy.com</a></li>
+    </ul>
+  </section>
 
-    <!-- ============ Projects ============ -->
-    <!-- <section class="section" id="projects">
-        <div class="container reveal">
-            <div class="section-label">Projects</div>
-            <h2 class="section-heading">Selected work</h2>
-            <p class="section-desc">
-                A collection of projects I've built — from open-source libraries to full-stack applications. Each one solves a real problem with thoughtful engineering.
-            </p>
-            <div class="projects-grid">
+  <footer>
+    Fakhar Sultan, Lahore.
+  </footer>
 
-                <article class="project-card">
-                    <div class="project-image">retemp</div>
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <span class="project-year">2026</span>
-                        </div>
-                        <h3>Retemp</h3>
-                        <p>
-                            A type-safe email templating library for React Email and Resend. Uses discriminated unions and automatic prop inference to catch template errors at compile time, eliminating runtime bugs in transactional email systems.
-                        </p>
-                        <div class="project-tags">
-                            <span>TypeScript</span>
-                            <span>React</span>
-                            <span>Resend</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/fakhyy/retemp" target="_blank" rel="noopener">GitHub →</a>
-                            <a href="#" target="_blank" rel="noopener">Live Demo →</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">netdocs</div>
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <span class="project-year">2025</span>
-                        </div>
-                        <h3>Netdocs Portal</h3>
-                        <p>
-                            A comprehensive computer networking documentation platform. Built with Astro and Starlight to deliver fast, searchable, and well-organized technical content for networking concepts and protocols.
-                        </p>
-                        <div class="project-tags">
-                            <span>Astro</span>
-                            <span>Starlight</span>
-                            <span>Tailwind CSS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/fakhyy/netdocs-portal" target="_blank" rel="noopener">GitHub →</a>
-                            <a href="#" target="_blank" rel="noopener">Live Demo →</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">storyme</div>
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <span class="project-year">2025</span>
-                        </div>
-                        <h3>StoryMe AI</h3>
-                        <p>
-                            An AI-powered platform that generates personalized children's storybooks. Features a React frontend with a Bun.js and Hono backend, leveraging AI to create unique, illustrated stories from user inputs.
-                        </p>
-                        <div class="project-tags">
-                            <span>React</span>
-                            <span>Hono.js</span>
-                            <span>PostgreSQL</span>
-                            <span>Bun</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/fakhyy/storyme-ai" target="_blank" rel="noopener">GitHub →</a>
-                            <a href="#" target="_blank" rel="noopener">Live Demo →</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">commerce</div>
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <span class="project-year">2025</span>
-                        </div>
-                        <h3>Headless Commerce Admin</h3>
-                        <p>
-                            A full-featured admin panel for headless e-commerce stores. Implements a four-tier RBAC system with Next.js 15, Drizzle ORM, and Better Auth for secure, role-based access control across the entire application.
-                        </p>
-                        <div class="project-tags">
-                            <span>Next.js 15</span>
-                            <span>Drizzle ORM</span>
-                            <span>Better Auth</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/fakhyy" target="_blank" rel="noopener">GitHub →</a>
-                            <a href="#" target="_blank" rel="noopener">Live Demo →</a>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section> -->
-
-    <!-- ============ Skills ============ -->
-    <section class="section" id="skills">
-        <div class="container reveal">
-            <div class="section-label">Skills</div>
-            <h2 class="section-heading">Technologies & tools</h2>
-            <p class="section-desc">
-                The languages, frameworks, tools, and concepts I work with daily to build reliable software.
-            </p>
-            <div class="skills-grid">
-
-                <div class="skill-group">
-                    <h3>Languages</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Rust</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">C++</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3>Frontend</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">SvelteKit</span>
-                        <span class="skill-tag">Tailwind CSS</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3>Backend</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Hono</span>
-                        <span class="skill-tag">Axum</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">Redis</span>
-                        <span class="skill-tag">Better Auth</span>
-                        <span class="skill-tag">Drizzle ORM</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3>Tools</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">Zed</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3>Concepts</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">API Design</span>
-                        <span class="skill-tag">System Design</span>
-                        <span class="skill-tag">Authentication</span>
-                        <span class="skill-tag">Performance</span>
-                        <span class="skill-tag">Accessibility</span>
-                        <span class="skill-tag">Responsive Design</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ============ Open Source ============ -->
-    <!-- <section class="section" id="open-source">
-        <div class="container reveal">
-            <div class="section-label">Open Source</div>
-            <h2 class="section-heading">Giving back to the community</h2>
-            <div class="oss-content">
-                <div class="oss-text">
-                    <p>
-                        I believe in building in the open. Open-source software is how the developer ecosystem grows, and I enjoy contributing tools, libraries, and experiments that others can learn from and build upon.
-                    </p>
-                    <p>
-                        From <strong>type-safe email templating</strong> to <strong>developer tooling</strong> and <strong>Rust libraries</strong>, my open-source work reflects the same standards I apply to production software — clean APIs, thorough documentation, and real-world usefulness.
-                    </p>
-                    <a href="https://github.com/fakhyy" class="btn btn-secondary" target="_blank" rel="noopener" style="margin-top:8px;">View GitHub Profile →</a>
-                </div>
-                <div class="oss-projects">
-                    <div class="oss-item">
-                        <h4>Retemp</h4>
-                        <p>Type-safe email templating with React Email, Resend, and discriminated unions for compile-time prop validation.</p>
-                    </div>
-                    <div class="oss-item">
-                        <h4>Developer Tools</h4>
-                        <p>CLI utilities, build plugins, and productivity tools designed to improve the day-to-day developer workflow.</p>
-                    </div>
-                    <div class="oss-item">
-                        <h4>Rust Experiments</h4>
-                        <p>Small libraries and proofs of concept exploring Rust's type system, memory safety, and systems programming.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- ============ Writing ============ -->
-    <!-- <section class="section" id="writing">
-        <div class="container reveal">
-            <div class="section-label">Writing</div>
-            <h2 class="section-heading">Thoughts & articles</h2>
-            <p class="section-desc">
-                Writing about software engineering, programming languages, and the ideas that shape how we build things.
-            </p>
-            <div class="writing-grid">
-
-                <article class="writing-card">
-                    <div class="writing-card-tag">Rust</div>
-                    <h3>Why Rust Changes How You Think About Software</h3>
-                    <p>How Rust's ownership model and type system fundamentally shift the way you approach error handling, memory, and architecture.</p>
-                    <span class="writing-card-date">Coming Soon</span>
-                </article>
-
-                <article class="writing-card">
-                    <div class="writing-card-tag">Software Architecture</div>
-                    <h3>Building Type-Safe Full-Stack Applications</h3>
-                    <p>A practical guide to sharing types between frontend and backend using TypeScript, Zod, and end-to-end validation.</p>
-                    <span class="writing-card-date">Coming Soon</span>
-                </article>
-
-                <article class="writing-card">
-                    <div class="writing-card-tag">Computer Science</div>
-                    <h3>Understanding Operating Systems From First Principles</h3>
-                    <p>Breaking down process management, memory allocation, and file systems — the fundamentals every developer should know.</p>
-                    <span class="writing-card-date">Coming Soon</span>
-                </article>
-
-                <article class="writing-card">
-                    <div class="writing-card-tag">Philosophy</div>
-                    <h3>Mathematics, Physics, and the Art of Software Design</h3>
-                    <p>How studying formal sciences shapes the way you approach complexity, abstraction, and elegance in code.</p>
-                    <span class="writing-card-date">Coming Soon</span>
-                </article>
-
-            </div>
-        </div>
-    </section> -->
-
-    <!-- ============ Contact ============ -->
-    <section class="contact" id="contact">
-        <div class="container reveal">
-            <div class="section-label">Contact</div>
-            <h2 class="section-heading">Let's build something together</h2>
-            <p class="section-desc">
-                Interested in working together, collaborating on an open-source project, or discussing software engineering? I'd love to hear from you.
-            </p>
-            <div class="contact-links">
-                <a href="mailto:hello@fakhyy.com" class="contact-link">Email</a>
-                <a href="https://github.com/fakhyy" class="contact-link" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://www.linkedin.com/in/fakhy" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://daily.dev/fakhyy" class="contact-link" target="_blank" rel="noopener">Daily.dev</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============ Footer ============ -->
-    <footer class="footer">
-        <p>© <span id="year"></span> Fakhar Sultan · Built with care</p>
-    </footer>
-
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="7603e2a9-b208-407f-8e92-b002e37c7803"></script>
-    <script>
-        /* ========================================
-           Active Navigation on Scroll
-           ======================================== */
-        (function () {
-            var sections = document.querySelectorAll(".section, .hero, .contact");
-            var navLinks = document.querySelectorAll(".nav-link");
-            var mobileLinks = document.querySelectorAll(".mobile-menu a");
-
-            function setActive() {
-                var scrollY = window.scrollY + 100;
-                var current = "";
-                sections.forEach(function (s) {
-                    if (s.offsetTop <= scrollY) current = s.getAttribute("id");
-                });
-                navLinks.forEach(function (link) {
-                    link.classList.toggle("active", link.getAttribute("data-section") === current);
-                });
-                mobileLinks.forEach(function (link) {
-                    var href = link.getAttribute("href").replace("#", "");
-                    link.classList.toggle("active", href === current);
-                });
-            }
-            window.addEventListener("scroll", setActive, { passive: true });
-            setActive();
-        })();
-
-        /* ========================================
-           Mobile Menu Toggle
-           ======================================== */
-        (function () {
-            var btn = document.querySelector(".nav-hamburger");
-            var menu = document.querySelector(".mobile-menu");
-            if (!btn || !menu) return;
-
-            btn.addEventListener("click", function () {
-                var open = menu.classList.toggle("open");
-                btn.classList.toggle("open", open);
-                btn.setAttribute("aria-expanded", open);
-            });
-
-            menu.querySelectorAll("a").forEach(function (a) {
-                a.addEventListener("click", function () {
-                    menu.classList.remove("open");
-                    btn.classList.remove("open");
-                    btn.setAttribute("aria-expanded", "false");
-                });
-            });
-        })();
-
-        /* ========================================
-           Scroll Reveal (Intersection Observer)
-           ======================================== */
-        (function () {
-            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-            var els = document.querySelectorAll(".reveal");
-            if (!els.length) return;
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            els.forEach(function (el) { observer.observe(el); });
-        })();
-
-        /* ========================================
-           Footer Year
-           ======================================== */
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+</div>
 
 </body>
 </html>
