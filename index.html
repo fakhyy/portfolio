@@ -1,350 +1,488 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Fakhar Sultan — Software Developer</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fakhar Sultan — Software Engineer</title>
+        <meta
+            name="description"
+            content="Fakhar Sultan is a Software Engineer from Pakistan specializing in Rust, TypeScript, React, Next.js, Node.js, Linux, and PostgreSQL. Highly interested in systems, mathematics, physics, and philosophy. "
+        />
+        <meta
+            name="keywords"
+            content="Fakhar Sultan, Fakhyy, Software Engineer, Rust Developer, Full Stack Developer, TypeScript, React, Next.js, Node.js, PostgreSQL, Linux, Portfolio, Physics, Mathematics, Systems, Philosophy"
+        />
+        <meta name="author" content="Fakhar Sultan" />
+        <meta name="robots" content="index,follow,max-image-preview:large" />
+        <meta name="theme-color" content="#141414" />
+        <meta name="color-scheme" content="dark" />
+        <meta name="creator" content="Fakhar Sultan" />
 
+        <link rel="canonical" href="https://fakhyy.com/" />
 
-    <meta
-        name="description"
-        content="Fakhar Sultan is a Software Engineer from Pakistan specializing in Rust, TypeScript, React, Next.js, Node.js, Linux, and PostgreSQL. Explore projects, articles, open-source work, and software engineering insights."
-    />
-    <meta
-        name="keywords"
-        content="Fakhar Sultan, Fakhyy, Software Engineer, Rust Developer, Full Stack Developer, TypeScript, React, Next.js, Node.js, PostgreSQL, Linux, Open Source, Portfolio"
-    />
-    <meta name="author" content="Fakhar Sultan" />
-    <meta name="robots" content="index,follow,max-image-preview:large" />
-    <meta name="theme-color" content="#141414" />
-    <meta name="color-scheme" content="dark" />
-    <meta name="creator" content="Fakhar Sultan" />
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Fakhyy" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:url" content="https://fakhyy.com/" />
+        <meta property="og:title" content="Fakhar Sultan | Software Engineer" />
+        <meta
+            property="og:description"
+            content="Software Engineer specializing in Rust, TypeScript, React, Next.js, Linux, PostgreSQL, and modern web technologies."
+        />
+        <meta property="og:image" content="https://fakhyy.com/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Fakhar Sultan Portfolio" />
 
-    <link rel="canonical" href="https://fakhyy.com/" />
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@fakhyy" />
+        <meta name="twitter:creator" content="@fakhyy" />
+        <meta
+            name="twitter:title"
+            content="Fakhar Sultan | Software Engineer"
+        />
+        <meta
+            name="twitter:description"
+            content="Rust · TypeScript · Full Stack Development · Linux · Open Source"
+        />
+        <meta name="twitter:image" content="https://fakhyy.com/og-image.jpg" />
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Fakhyy" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="https://fakhyy.com/" />
-    <meta property="og:title" content="Fakhar Sultan | Software Engineer" />
-    <meta
-        property="og:description"
-        content="Software Engineer specializing in Rust, TypeScript, React, Next.js, Linux, PostgreSQL, and modern web technologies."
-    />
-    <meta property="og:image" content="https://fakhyy.com/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Fakhar Sultan Portfolio" />
+        <!-- Icons -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="/favicon-96x96.png"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@fakhyy" />
-    <meta name="twitter:creator" content="@fakhyy" />
-    <meta name="twitter:title" content="Fakhar Sultan | Software Engineer" />
-    <meta
-        name="twitter:description"
-        content="Rust · TypeScript · Full Stack Development · Linux · Open Source"
-    />
-    <meta name="twitter:image" content="https://fakhyy.com/og-image.jpg" />
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,380;9..144,480;9..144,560&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- Icons -->
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Fakhar Sultan",
+                "alternateName": "Fakhyy",
+                "url": "https://fakhyy.com",
+                "image": "https://fakhyy.com/profile.png",
+                "jobTitle": "Software Engineer",
+                "description": "Software Engineer specializing in Rust, Full Stack Development, Linux.",
+                "sameAs": [
+                    "https://github.com/fakhyy",
+                    "https://linkedin.com/in/fakhyy",
+                    "https://x.com/fakhyy",
+                    "https://daily.dev/fakhyy",
+                    "https://instagram.com/fakhyy_"
+                ],
+                "knowsAbout": [
+                    "Rust",
+                    "TypeScript",
+                    "React",
+                    "Next.js",
+                    "Node.js",
+                    "PostgreSQL",
+                    "Linux",
+                    "Docker",
+                    "Software Engineering"
+                ]
+            }
+        </script>
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,380;9..144,480;9..144,560&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+        <style>
+            :root {
+                --bg: #17161b;
+                --bg-soft: #1c1b22;
+                --rule: #2b2932;
+                --text: #e8e5e1;
+                --text-muted: #948f9c;
+                --accent: #93a9c7;
+                --accent-dim: rgba(147, 169, 199, 0.14);
+            }
 
-<script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Fakhar Sultan",
-      "alternateName": "Fakhyy",
-      "url": "https://fakhyy.com",
-      "image": "https://fakhyy.com/profile.png",
-      "jobTitle": "Software Engineer",
-      "description": "Software Engineer specializing in Rust, Full Stack Development, Linux, and Open Source.",
-      "sameAs": [
-        "https://github.com/fakhyy",
-        "https://linkedin.com/in/fakhy",
-        "https://x.com/fakhyy",
-        "https://daily.dev/fakhyy"
-      ],
-      "knowsAbout": [
-        "Rust", "TypeScript", "React", "Next.js", "Node.js",
-        "PostgreSQL", "Linux", "Docker", "Open Source", "Software Engineering"
-      ]
-    }
-    </script>
+            * {
+                box-sizing: border-box;
+            }
 
-<style>
-  :root{
-    --bg: #17161b;
-    --bg-soft: #1c1b22;
-    --rule: #2b2932;
-    --text: #e8e5e1;
-    --text-muted: #948f9c;
-    --accent: #93a9c7;
-    --accent-dim: rgba(147,169,199,0.14);
-  }
+            html {
+                background: var(--bg);
+            }
 
-  *{ box-sizing: border-box; }
+            body {
+                margin: 0;
+                background: var(--bg);
+                color: var(--text);
+                font-family: "Inter", sans-serif;
+                font-size: 16px;
+                line-height: 1.7;
+                -webkit-font-smoothing: antialiased;
+                position: relative;
+                min-height: 100vh;
+            }
 
-  html{ background: var(--bg); }
+            /* soft grain, so the dark field doesn't read flat */
+            body::before {
+                content: "";
+                position: fixed;
+                inset: 0;
+                pointer-events: none;
+                opacity: 0.035;
+                z-index: 0;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            }
 
-  body{
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-    position: relative;
-    min-height: 100vh;
-  }
+            .wrap {
+                position: relative;
+                z-index: 1;
+                max-width: 620px;
+                margin: 0 auto;
+                padding: 5.5rem 1.5rem 4rem;
+            }
 
-  /* soft grain, so the dark field doesn't read flat */
-  body::before{
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.035;
-    z-index: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
+            .reveal {
+                animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+            }
+            @keyframes rise {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .reveal {
+                    animation: none;
+                }
+            }
 
-  .wrap{
-    position: relative;
-    z-index: 1;
-    max-width: 620px;
-    margin: 0 auto;
-    padding: 5.5rem 1.5rem 4rem;
-  }
+            header {
+                margin-bottom: 3rem;
+            }
 
-  .reveal{
-    animation: rise 0.7s cubic-bezier(.2,.7,.3,1) both;
-  }
-  @keyframes rise{
-    from{ opacity: 0; transform: translateY(10px); }
-    to{ opacity: 1; transform: translateY(0); }
-  }
-  @media (prefers-reduced-motion: reduce){
-    .reveal{ animation: none; }
-  }
+            h1 {
+                font-family: "Fraunces", serif;
+                font-optical-sizing: auto;
+                font-weight: 480;
+                font-size: 2.6rem;
+                letter-spacing: -0.01em;
+                margin: 0 0 0.6rem;
+                color: var(--text);
+            }
 
-  header{ margin-bottom: 3rem; }
+            .tagline {
+                color: var(--text-muted);
+                font-size: 1.02rem;
+                max-width: 34ch;
+                margin: 0;
+            }
 
-  h1{
-    font-family: 'Fraunces', serif;
-    font-optical-sizing: auto;
-    font-weight: 480;
-    font-size: 2.6rem;
-    letter-spacing: -0.01em;
-    margin: 0 0 0.6rem;
-    color: var(--text);
-  }
+            .bio {
+                color: var(--text);
+                font-size: 1rem;
+                max-width: 58ch;
+                margin: 1.6rem 0 0;
+            }
 
-  .tagline{
-    color: var(--text-muted);
-    font-size: 1.02rem;
-    max-width: 34ch;
-    margin: 0;
-  }
+            section {
+                margin-top: 3.4rem;
+            }
 
-  .bio{
-    color: var(--text);
-    font-size: 1rem;
-    max-width: 58ch;
-    margin: 1.6rem 0 0;
-  }
+            h2 {
+                font-family: "Fraunces", serif;
+                font-optical-sizing: auto;
+                font-style: italic;
+                font-weight: 400;
+                font-size: 1.15rem;
+                color: var(--text-muted);
+                margin: 0 0 1.4rem;
+            }
 
-  section{ margin-top: 3.4rem; }
+            .project {
+                padding: 1.6rem 0;
+                border-top: 1px solid var(--rule);
+            }
+            .project:last-child {
+                padding-bottom: 0;
+            }
 
-  h2{
-    font-family: 'Fraunces', serif;
-    font-optical-sizing: auto;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    margin: 0 0 1.4rem;
-  }
+            .project h3 {
+                font-family: "Inter", sans-serif;
+                font-weight: 600;
+                font-size: 1.05rem;
+                margin: 0 0 0.5rem;
+                color: var(--text);
+            }
 
-  .project{
-    padding: 1.6rem 0;
-    border-top: 1px solid var(--rule);
-  }
-  .project:last-child{ padding-bottom: 0; }
+            .project p {
+                margin: 0 0 0.9rem;
+                color: var(--text-muted);
+                font-size: 0.95rem;
+                max-width: 56ch;
+            }
 
-  .project h3{
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 1.05rem;
-    margin: 0 0 0.5rem;
-    color: var(--text);
-  }
+            .tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            .tags span {
+                font-family: "IBM Plex Mono", monospace;
+                font-size: 0.72rem;
+                letter-spacing: 0.01em;
+                color: var(--accent);
+                background: var(--accent-dim);
+                padding: 0.25rem 0.55rem;
+                border-radius: 3px;
+            }
 
-  .project p{
-    margin: 0 0 0.9rem;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    max-width: 56ch;
-  }
+            .now {
+                font-size: 0.95rem;
+                color: var(--text-muted);
+                max-width: 56ch;
+                border-left: 2px solid var(--accent);
+                padding-left: 1rem;
+            }
 
-  .tags{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .tags span{
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.01em;
-    color: var(--accent);
-    background: var(--accent-dim);
-    padding: 0.25rem 0.55rem;
-    border-radius: 3px;
-  }
+            .stack {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            .stack span {
+                font-family: "IBM Plex Mono", monospace;
+                font-size: 0.75rem;
+                letter-spacing: 0.01em;
+                color: var(--text-muted);
+                background: var(--bg-soft);
+                border: 1px solid var(--rule);
+                padding: 0.25rem 0.6rem;
+                border-radius: 3px;
+            }
 
-  .now{
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    max-width: 56ch;
-    border-left: 2px solid var(--accent);
-    padding-left: 1rem;
-  }
+            .labs-card {
+                margin-top: 1.4rem;
+                padding: 1.4rem 1.5rem;
+                border: 1px solid var(--rule);
+                border-radius: 6px;
+                background: var(--bg-soft);
+            }
 
-  .stack{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 0.6rem;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.82rem;
-    color: var(--text-muted);
-  }
-  .stack span:not(:last-child)::after{
-    content: "";
-  }
+            .labs-card-head {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 0.75rem;
+                margin-bottom: 0.6rem;
+            }
 
-  .contact-list{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+            .labs-card h3 {
+                font-family: "Inter", sans-serif;
+                font-weight: 600;
+                font-size: 1rem;
+                margin: 0;
+                color: var(--text);
+            }
 
-  a{
-    color: var(--text);
-    text-decoration: none;
-    border-bottom: 1px solid var(--rule);
-    transition: border-color 0.2s ease, color 0.2s ease;
-  }
-  a:hover, a:focus-visible{
-    color: var(--accent);
-    border-color: var(--accent);
-  }
-  a:focus-visible{
-    outline: 2px solid var(--accent);
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
+            .status-pill {
+                font-family: "IBM Plex Mono", monospace;
+                font-size: 0.68rem;
+                letter-spacing: 0.03em;
+                text-transform: uppercase;
+                color: var(--accent);
+                background: var(--accent-dim);
+                padding: 0.22rem 0.5rem;
+                border-radius: 3px;
+                white-space: nowrap;
+            }
 
-  footer{
-    margin-top: 4.5rem;
-    padding-top: 1.6rem;
-    border-top: 1px solid var(--rule);
-    color: var(--text-muted);
-    font-size: 0.82rem;
-  }
+            .labs-card p {
+                margin: 0;
+                color: var(--text-muted);
+                font-size: 0.92rem;
+                max-width: 56ch;
+            }
 
-  @media (max-width: 420px){
-    h1{ font-size: 2.1rem; }
-    .wrap{ padding: 3.5rem 1.25rem 3rem; }
-  }
-</style>
-</head>
-<body>
+            .contact-list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
 
-<div class="wrap reveal">
+            a {
+                color: var(--text);
+                text-decoration: none;
+                border-bottom: 1px solid var(--rule);
+                transition:
+                    border-color 0.2s ease,
+                    color 0.2s ease;
+            }
+            a:hover,
+            a:focus-visible {
+                color: var(--accent);
+                border-color: var(--accent);
+            }
+            a:focus-visible {
+                outline: 2px solid var(--accent);
+                outline-offset: 3px;
+                border-radius: 2px;
+            }
 
-  <header>
-    <h1>Fakhar Sultan</h1>
-    <p class="tagline">Software developer and builder exploring the intersection of code, systems, and ideas.</p>
-    <p class="bio">I build software to understand things, solve problems, and turn ideas into something real. I'm especially interested in systems, mathematics, physics, and philosophy.</p>
-  </header>
+            footer {
+                margin-top: 4.5rem;
+                padding-top: 1.6rem;
+                border-top: 1px solid var(--rule);
+                color: var(--text-muted);
+                font-size: 0.82rem;
+            }
 
-  <section>
-    <h2>Selected work</h2>
+            @media (max-width: 420px) {
+                h1 {
+                    font-size: 2.1rem;
+                }
+                .wrap {
+                    padding: 3.5rem 1.25rem 3rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap reveal">
+            <header>
+                <h1>Fakhar Sultan</h1>
+                <p class="tagline">
+                    Software engineer exploring the intersection of code,
+                    systems, and ideas.
+                </p>
+                <p class="bio">
+                    I build software to understand things, solve problems, and
+                    turn ideas into something real. I'm especially interested in
+                    systems, mathematics, physics, and philosophy.
+                </p>
+            </header>
 
-    <div class="project">
-      <h3>Just Post</h3>
-      <p>A modern blog publishing platform and CMS focused on writing, rich-text editing, and a clean publishing experience.</p>
-      <div class="tags"><span>tanstack start</span><span>drizzle</span><span>postgresql</span><span>tiptap</span></div>
-    </div>
+            <section>
+                <h2>Selected work</h2>
 
-    <div class="project">
-      <h3>RaLynk</h3>
-      <p>A link analytics SaaS for creating and tracking links, with a free and pro product model.</p>
-      <div class="tags"><span>next.js</span><span>typescript</span><span>postgresql</span><span>redis</span></div>
-    </div>
+                <div class="project">
+                    <h3>Just Post</h3>
+                    <p>
+                        A modern blog publishing platform and CMS focused on
+                        writing, rich-text editing, and a clean publishing
+                        experience.
+                    </p>
+                    <div class="tags">
+                        <span>tanstack start</span><span>drizzle</span
+                        ><span>postgresql</span><span>tiptap</span>
+                    </div>
+                </div>
 
-    <div class="project">
-      <h3>Retemp</h3>
-      <p>An npm library for building reusable email templates, created to make transactional email development simpler and more consistent.</p>
-      <div class="tags"><span>typescript</span><span>react email</span><span>npm</span></div>
-    </div>
+                <div class="project">
+                    <h3>RaLynk</h3>
+                    <p>
+                        A link analytics SaaS for creating and tracking links,
+                        with a free and pro product model.
+                    </p>
+                    <div class="tags">
+                        <span>next.js</span><span>typescript</span
+                        ><span>postgresql</span><span>redis</span>
+                    </div>
+                </div>
 
-    <div class="project">
-      <h3>Fakhyy Labs</h3>
-      <p>A space for experiments, developer tools, and ideas that don't fit into a single product.</p>
-      <div class="tags"><span>experiments</span><span>tools</span><span>research</span></div>
-    </div>
-  </section>
+                <div class="project">
+                    <h3>Retemp</h3>
+                    <p>
+                        An npm library for building reusable email templates,
+                        created to make transactional email development simpler
+                        and more consistent.
+                    </p>
+                    <div class="tags">
+                        <span>typescript</span><span>react email</span
+                        ><span>npm</span>
+                    </div>
+                </div>
+            </section>
 
-  <section>
-    <h2>Right now</h2>
-    <p class="now">Building Fakhyy Labs, improving my engineering fundamentals, and exploring Rust, systems programming, AI, mathematics, and the deeper ideas connecting computation with the physical world.</p>
-  </section>
+            <section>
+                <h2>Right now</h2>
+                <p class="now">
+                    Building Fakhyy Labs, improving my engineering fundamentals,
+                    and exploring Rust, systems programming, AI, mathematics,
+                    and the deeper ideas connecting computation with the
+                    physical world.
+                </p>
 
-  <section>
-    <h2>Languages</h2>
-    <div class="stack">
-      <span>typescript</span><span>rust</span><span>python</span><span>c++</span><span>sql</span>
-    </div>
-  </section>
+                <div class="labs-card">
+                    <div class="labs-card-head">
+                        <h3>Fakhyy Labs</h3>
+                        <span class="status-pill">In development</span>
+                    </div>
+                    <p>
+                        A space for experiments, developer tools, and ideas that
+                        don't fit into a single product. Currently being built
+                        out.
+                    </p>
+                </div>
+            </section>
 
-  <section>
-    <h2>Stack</h2>
-    <div class="stack">
-      <span>react</span><span>next.js</span><span>tanstack start</span><span>sveltekit</span><span>node.js</span><span>bun</span><span>hono</span><span>postgresql</span><span>mongodb</span><span>redis</span><span>drizzle</span><span>tailwind css</span><span>shadcn ui</span><span>tiptap</span><span>docker</span>
-    </div>
-  </section>
+            <section>
+                <h2>Languages</h2>
+                <div class="stack">
+                    <span>typescript</span><span>rust</span><span>python</span
+                    ><span>c++</span><span>sql</span>
+                </div>
+            </section>
 
-  <section>
-    <h2>Get in touch</h2>
-    <ul class="contact-list">
-      <li><a href="mailto:hello@fakhyy.com">hello@fakhyy.com</a></li>
-      <li><a href="https://github.com/fakhyy">github.com/fakhyy</a></li>
-      <li><a href="https://linkedin.com/in/fakhyy">linkedin.com/in/fakhyy</a></li>
-      <li><a href="https://fakhyy.com">fakhyy.com</a></li>
-    </ul>
-  </section>
+            <section>
+                <h2>Stack</h2>
+                <div class="stack">
+                    <span>react</span><span>next.js</span
+                    ><span>tanstack start</span><span>sveltekit</span
+                    ><span>node.js</span><span>bun</span><span>hono</span
+                    ><span>postgresql</span><span>mongodb</span
+                    ><span>redis</span><span>drizzle</span
+                    ><span>tailwind css</span><span>shadcn ui</span
+                    ><span>tiptap</span><span>docker</span>
+                </div>
+            </section>
 
-  <footer>
-    Fakhar Sultan, Lahore.
-  </footer>
+            <section>
+                <h2>Get in touch</h2>
+                <ul class="contact-list">
+                    <li>
+                        <a href="mailto:hello@fakhyy.com">hello@fakhyy.com</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/fakhyy">Github</a>
+                    </li>
+                    <li>
+                        <a href="https://linkedin.com/in/fakhyy">Linkedin</a>
+                    </li>
+                    <li><a href="https://fakhyy.com">fakhyy.com</a></li>
+                </ul>
+            </section>
 
-</div>
-
-</body>
+            <footer>Fakhar Sultan, Lahore.</footer>
+        </div>
+    </body>
 </html>
